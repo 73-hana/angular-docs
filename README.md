@@ -15,3 +15,7 @@ $ docker restart angularnode
 - 新規コンポーネントを作成するには`ng generate component [component-name]`を実行する。このコマンドでTS、HTML、CSSファイルが生成され、AppModuleの`@NgModule`の`declarations`に追加される。TSファイルのクラスでは、必ず`Component`シンボルをインポートし、クラスを`@Component`でアノテートする必要がある。アノテーション内で、コンポーネントのセレクタ名（`selector`）、テンプレートのファイルパス（`templateUrl`）、スタイルシートのファイルパス（`styleUrls`）を設定する。
 
 コンポーネントにおいて、一方向バインディング（TSクラスのプロパティからHTMLテンプレート）を行うには二重波括弧を用いる。双方向バインディング（TSクラスのプロパティのデータをHTMLテンプレートに表示し、HTMLテンプレートでユーザの入力を取得しTSクラスのプロパティを書き換える）を用いるにはAppModuleの`@NgModule`の`imports`に`FormsModules`をインポートし、テンプレート内で`[(ngModel)]`を用いる必要がある。
+
+配列やオブジェクトの項目を繰り返し表示（リストアップ）するには`*ngFor`ディレクティブを用いる。引数にはfor...of文の構文を挿入する。プロパティの有無で表示をするかどうか切り替えたいときは`*ngIf`ディレクティブを用いる。
+
+イベントバインディングを行うには`(event)="function()"`を指定する。ここでの関数はコンポーネントクラスのメソッドである。
